@@ -59,6 +59,7 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
 5. Install backend dependencies:
 
    ```
+   cd server
    npm install
     ```
 
