@@ -53,7 +53,7 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
 3. Open the terminal in the repository folder:
  
    ```
-   cd folder-name
+   cd Blog_application
     ```
 
 5. Install backend dependencies:
