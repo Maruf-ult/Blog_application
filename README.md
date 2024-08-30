@@ -6,19 +6,19 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
 
 ## Features
 
- - Create a New Blog Post
+**- Create a New Blog Post**
   
      -  Users can create a new blog post by providing a title, description, and uploading an image.
 
     - The data is stored in a MongoDB database.
 
-- View All Blog Posts:
+**- View All Blog Posts:**
    
    - Users can view a list of all blog posts.
 
    - Each post displays the title, description, and a thumbnail of the image.
 
-- Delete a Blog Post:
+**- Delete a Blog Post:**
 
    - Users can delete a blog post by clicking a delete button associated with each post.
 
@@ -44,47 +44,47 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
 
 ## Installation
 
-1. Clone this repository:
+**1. Clone this repository:**
 
    ```
     https://github.com/Maruf-ult/Blog_application.git
-     ```
+   ```
 
-3. Open the terminal in the repository folder:
+**2. Open the terminal in the repository folder:**
  
    ```
    cd Blog_application
-    ```
+   ```
 
-5. Install backend dependencies:
+**3. Install backend dependencies:**
 
    ```
    cd server
    npm install
-    ```
+   ```
 
-7. Install frontend dependencies:
+**4. Install frontend dependencies:**
    
    ```
    cd client
    npm install
-     ```
+   ```
 
-9. Configure MongoDB:
+**5. Configure MongoDB:**
 - Create an account on MongoDB Compass.
 - Create a database and obtain your MongoDB URI.
 - Create a `.env` file in the root directory and add your MongoDB URI:
 
   ```  MONGO_URI=your_mongodb_uri  ```
 
-6. Run the backend application:
+**6. Run the backend application:**
    
    ```
    cd server
    npm start
    ```
 
-6. Run the frontend application:
+**7. Run the frontend application:**
    
    ```
    cd client
@@ -94,4 +94,4 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
 
 Feel free to adapt this template to your project's specific requirements. Happy coding! 🚀
 
-: GitHub - Maruf-ult/Blog_application
+**: GitHub - Maruf-ult/Blog_application**
