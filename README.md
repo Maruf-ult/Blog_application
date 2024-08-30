@@ -77,11 +77,20 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
 
   ```  MONGO_URI=your_mongodb_uri  ```
 
-6. Run the application:
+6. Run the backend application:
    
    ```
+   cd server
    npm start
    ```
+
+6. Run the backend application:
+   
+   ```
+   cd client
+   npm run dev
+   ```   
+
 
 Feel free to adapt this template to your project's specific requirements. Happy coding! 🚀
 
