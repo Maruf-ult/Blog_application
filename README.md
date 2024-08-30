@@ -84,7 +84,7 @@ This is a simple MERN (MongoDB, Express, React, Node.js) blog application that a
    npm start
    ```
 
-6. Run the backend application:
+6. Run the frontend application:
    
    ```
    cd client
