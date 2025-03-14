@@ -4,18 +4,23 @@ import { useNavigate } from "react-router-dom";
 
 function Home() {
   const [Blog, setBlog] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);  // For loading state
+  const [error, setError] = useState(null);          // For error state
   const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
       try {
+        setIsLoading(true);  // Set loading to true when fetching
         const response = await axios.get('https://blog-application-wses.onrender.com/api/get-blog');
-        const res = response.data.Blogs; 
+        const res = response.data.Blogs;
         console.log('Fetched Data:', res);
         setBlog(res);
       } catch (error) {
         console.log('Error fetching data:', error);
-        alert(error);
+        setError('Failed to load blogs');
+      } finally {
+        setIsLoading(false);  // Set loading to false after fetching
       }
     }
     fetchData();
@@ -48,6 +53,14 @@ function Home() {
     }
   };
 
+  if (isLoading) {
+    return <div>Loading...</div>;  // Display loading state
+  }
+
+  if (error) {
+    return <div>{error}</div>;  // Display error state
+  }
+
   return (
     <>
       <div className="flex bg-cyan-300 h-full w-full p-4 justify-between">
@@ -64,7 +77,11 @@ function Home() {
           {Array.isArray(Blog) && Blog.map((item) => (
             <li key={item._id} className="bg-slate-200 p-4 rounded shadow flex items-start relative">
               <div className="w-72 h-36 flex-shrink-0">
-                <img src={`https://blog-application-wses.onrender.com/` + item.image.split('\\').pop()} alt={item.title} className="w-full h-full object-cover" />
+                <img 
+                  src={`https://blog-application-wses.onrender.com/` + (item.image?.split('\\').pop() || item.image)} 
+                  alt={item.title} 
+                  className="w-full h-full object-cover" 
+                />
               </div>
               <div className="flex-grow pl-10">
                 <h2 className="font-bold text-lg">{item.title}</h2>
