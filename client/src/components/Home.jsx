@@ -64,7 +64,7 @@ function Home() {
           {Array.isArray(Blog) && Blog.map((item) => (
             <li key={item._id} className="bg-slate-200 p-4 rounded shadow flex items-start relative">
               <div className="w-72 h-36 flex-shrink-0">
-                <img src={`http://localhost:3000/` + item.image.split('\\').pop()} alt={item.title} className="w-full h-full object-cover" />
+                <img src={`https://blog-application-wses.onrender.com/` + item.image.split('\\').pop()} alt={item.title} className="w-full h-full object-cover" />
               </div>
               <div className="flex-grow pl-10">
                 <h2 className="font-bold text-lg">{item.title}</h2>
