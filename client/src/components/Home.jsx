@@ -30,6 +30,7 @@ function Home() {
     navigate('/create-blog');
   };
 
+  // Function to format text for display (chunks of 120 characters)
   const formatText = (text) => {
     let formattedText = '';
     for (let i = 0; i < text.length; i += 120) {
@@ -53,12 +54,13 @@ function Home() {
     }
   };
 
+  // Handle loading or error state
   if (isLoading) {
-    return <div>Loading...</div>;  // Display loading state
+    return <div>Loading...</div>;
   }
 
   if (error) {
-    return <div>{error}</div>;  // Display error state
+    return <div>{error}</div>;
   }
 
   return (
@@ -74,22 +76,30 @@ function Home() {
        
       <div className="p-4">
         <ul className="space-y-4">
-          {Array.isArray(Blog) && Blog.map((item) => (
-            <li key={item._id} className="bg-slate-200 p-4 rounded shadow flex items-start relative">
-              <div className="w-72 h-36 flex-shrink-0">
-                <img 
-const imageUrl = item.image ? `https://blog-application-wses.onrender.com/${item.image.replace(/\\/g, '/')}` : null;
-                  alt={item.title} 
-                  className="w-full h-full object-cover" 
-                />
-              </div>
-              <div className="flex-grow pl-10">
-                <h2 className="font-bold text-lg">{item.title}</h2>
-                <p className="overflow-hidden text-ellipsis whitespace-nowrap" dangerouslySetInnerHTML={{ __html: formatText(item.about) }}></p>
-              </div>
-              <button onClick={() => handleDelete(item._id)} className="bg-red-500 text-white px-3 py-1 rounded-md absolute top-4 right-4">Delete</button>
-            </li>
-          ))}
+          {Array.isArray(Blog) && Blog.map((item) => {
+            // Define the imageUrl outside the JSX, so it's not part of the return statement
+            const imageUrl = item.image ? `https://blog-application-wses.onrender.com/${item.image.replace(/\\/g, '/')}` : null;
+
+            return (
+              <li key={item._id} className="bg-slate-200 p-4 rounded shadow flex items-start relative">
+                <div className="w-72 h-36 flex-shrink-0">
+                  <img 
+                    src={imageUrl || 'fallback-image-url.jpg'} // Use fallback image if not found
+                    alt={item.title} 
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+                <div className="flex-grow pl-10">
+                  <h2 className="font-bold text-lg">{item.title}</h2>
+                  <p 
+                    className="overflow-hidden text-ellipsis whitespace-nowrap" 
+                    dangerouslySetInnerHTML={{ __html: formatText(item.about) }}
+                  ></p>
+                </div>
+                <button onClick={() => handleDelete(item._id)} className="bg-red-500 text-white px-3 py-1 rounded-md absolute top-4 right-4">Delete</button>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </>
