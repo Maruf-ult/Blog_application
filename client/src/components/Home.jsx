@@ -78,7 +78,7 @@ function Home() {
             <li key={item._id} className="bg-slate-200 p-4 rounded shadow flex items-start relative">
               <div className="w-72 h-36 flex-shrink-0">
                 <img 
-                  src={`https://blog-application-wses.onrender.com/` + (item.image?.split('\\').pop() || item.image)} 
+const imageUrl = item.image ? `https://blog-application-wses.onrender.com/${item.image.replace(/\\/g, '/')}` : null;
                   alt={item.title} 
                   className="w-full h-full object-cover" 
                 />
