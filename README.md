@@ -3,6 +3,8 @@
 This is a simple MERN (MongoDB, Express, React, Node.js) blog application that allows users to create, read and delete blog posts. Users can input a title, description (about), and an image for each blog post.
 
 
+## Live link
+https://blog-application-1-hqf5.onrender.com
 
 
 ## Features
