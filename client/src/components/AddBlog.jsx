@@ -33,7 +33,7 @@ function AddBlog() {
 
     try {
       const addUser = await axios.post(
-        "http://localhost:3000/api/create-blog",
+        "https://blog-application-wses.onrender.com/api/create-blog",
         formData,
         {
           headers: {
