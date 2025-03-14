@@ -9,7 +9,7 @@ function Home() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('http://localhost:3000/api/get-blog');
+        const response = await axios.get('https://blog-application-wses.onrender.com/api/get-blog');
         const res = response.data.Blogs; 
         console.log('Fetched Data:', res);
         setBlog(res);
@@ -37,7 +37,7 @@ function Home() {
     const confirmDelete = window.confirm('Are you sure you want to delete this blog post?');
     if (confirmDelete) {
       try {
-        const deleteBlog = await axios.delete(`http://localhost:3000/api/delete-blog/${id}`);
+        const deleteBlog = await axios.delete(`https://blog-application-wses.onrender.com/api/delete-blog/${id}`);
         const res = deleteBlog.data;
         console.log(res);
         setBlog(Blog.filter(blog => blog._id !== id));
